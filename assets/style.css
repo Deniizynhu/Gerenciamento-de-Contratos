@@ -1,0 +1,152 @@
+:root { 
+    --primary: #0056b3; 
+    --primary-dark: #004494;
+    --sidebar-width: 260px;
+    --bg: #f4f6f9; 
+    --text-color: #333;
+}
+
+body { 
+    font-family: 'Segoe UI', sans-serif; 
+    margin: 0; 
+    background: var(--bg); 
+    color: var(--text-color);
+    display: flex; /* Layout Flex para Sidebar + Conteúdo */
+    min-height: 100vh;
+}
+
+/* --- SIDEBAR (MENU LATERAL - TEMA BRANCO) --- */
+.sidebar {
+    width: var(--sidebar-width);
+    background: #ffffff; /* Fundo BRANCO */
+    color: #333;         /* Texto Escuro */
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    /* Sombra suave e borda direita para separar do conteúdo */
+    box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+    border-right: 1px solid #e1e4e8; 
+    z-index: 1000;
+}
+
+/* Área do Logo e Usuário */
+.sidebar-header {
+    background: #ffffff; /* Fundo Branco */
+    padding: 30px 20px;
+    text-align: center;
+    /* Linha separadora sutil abaixo do header */
+    border-bottom: 1px solid #f0f0f0; 
+}
+
+.logo-img {
+    max-width: 160px;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user-info {
+    font-size: 0.9rem;
+    color: #666; /* Cinza médio */
+}
+.user-info strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--primary); /* Azul da marca para o nome */
+    margin-bottom: 5px;
+}
+.user-role {
+    background: #e9ecef; /* Fundo cinza claro para o cargo */
+    color: #495057;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Links do Menu */
+.sidebar-menu {
+    padding: 20px 0;
+    flex: 1;
+}
+
+.sidebar-menu a {
+    display: block;
+    padding: 15px 25px;
+    color: #555; /* Cinza escuro para os links */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    border-left: 4px solid transparent; /* Borda invisível para efeito hover */
+}
+
+/* Efeito ao passar o mouse no menu */
+.sidebar-menu a:hover {
+    background: #f8f9fa; /* Cinza muito claro */
+    color: var(--primary); /* Texto fica Azul */
+    border-left-color: var(--primary); /* Aparece uma barrinha azul na esquerda */
+}
+
+/* Botão Sair no rodapé do menu */
+.sidebar-footer {
+    padding: 20px;
+    border-top: 1px solid #f0f0f0;
+    background: #fff;
+}
+.btn-logout-menu {
+    display: block;
+    text-align: center;
+    background: #fff0f0; /* Fundo avermelhado bem claro */
+    color: #dc3545;      /* Vermelho */
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background 0.3s;
+    border: 1px solid #ffcccc;
+}
+.btn-logout-menu:hover {
+    background: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.main-content {
+    margin-left: var(--sidebar-width); /* Empurra o conteúdo para a direita */
+    flex: 1;
+    padding: 30px;
+    width: calc(100% - var(--sidebar-width));
+}
+
+/* Estilos Globais (Tabelas, Cards, Forms) */
+.container { width: 100%; max-width: 1200px; margin: 0 auto; }
+h1, h2 { color: #333; margin-top: 0; }
+
+/* Dashboard Cards (Reutilizado) */
+.dashboard-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.number { font-size: 2rem; font-weight: bold; color: var(--primary); margin: 10px 0; }
+
+/* Tabelas e Forms (Mantendo compatibilidade) */
+.table { width: 100%; border-collapse: collapse; background: white; margin-top: 10px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.table th, .table td { padding: 15px; border-bottom: 1px solid #eee; text-align: left; }
+.table th { background: #f8f9fa; }
+.badge { padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; color: white; }
+.badge.ativo { background: green; } .badge.pendente { background: orange; } .badge.encerrado { background: gray; }
+
+/* Responsivo para Celular */
+@media (max-width: 768px) {
+    .sidebar { width: 100%; height: auto; position: relative; }
+    .main-content { margin-left: 0; width: 100%; }
+    .logo-img { max-width: 100px; }
+}

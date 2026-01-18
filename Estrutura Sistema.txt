@@ -1,0 +1,31 @@
+/dultec_sistema
+│
+├── /assets
+│   ├── style.css           (O arquivo CSS final com tema branco e login fixo)
+│   └── logo.png            (Sua imagem de logotipo)
+│
+├── /config
+│   └── db.php              (Conexão com o banco de dados)
+│
+├── /includes
+│   ├── auth.php            (Verificação de sessão)
+│   ├── header.php          (Menu lateral, lógica de temas e favicon)
+│   └── footer.php          (Fechamento das tags HTML e scripts globais)
+│
+├── index.php               (Dashboard com Cards e Gráficos)
+├── login.php               (Tela de Login com CSS embutido e Logo)
+├── logout.php              (Script para sair)
+│
+├── clientes.php            (Listagem de Clientes)
+├── clientes_cadastrar.php  (Formulário com busca de CNPJ/CEP)
+├── clientes_editar.php     (Edição de Clientes com regras de permissão)
+│
+├── contratos.php           (Listagem de Contratos com filtro por usuário)
+├── contratos_cadastrar.php (Criação de contrato com texto jurídico dinâmico)
+│
+├── usuarios.php            (Listagem de Funcionários/Usuários)
+├── usuarios_cadastrar.php  (Cadastro de novos acessos)
+├── usuarios_editar.php     (Edição de senha e dados)
+├── usuarios_excluir.php    (Script de exclusão - Apenas Admin)
+│
+└── configuracoes.php       (Alteração de Logo, Nome e Tema)
